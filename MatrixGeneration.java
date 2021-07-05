@@ -24,26 +24,7 @@ public class MatrixGeneration {
                 if (random.nextBoolean()) {
                     current_gen[i][j] = 'O';
                 }
-                //System.out.print(current_gen[i][j]);
             }
-            //System.out.println();
-        }
-
-    }
-
-    public void Generation(int game_size, int seed, int number_generations) {
-        this.seed = seed;
-        Random random = new Random(seed);
-
-        for (int i = 0; i < game_size; i++) {
-            for (int j = 0; j < game_size; j++) {
-                current_gen[i][j] = ' ';
-                if (random.nextBoolean()) {
-                    current_gen[i][j] = 'O';
-                }
-                //System.out.print(current_gen[i][j]);
-            }
-            //System.out.println();
         }
 
     }
