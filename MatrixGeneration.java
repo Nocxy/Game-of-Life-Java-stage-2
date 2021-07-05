@@ -26,7 +26,6 @@ public class MatrixGeneration {
                 }
             }
         }
-
     }
 
     public void Generation(int game_size, int seed, int number_generations) {
@@ -43,8 +42,6 @@ public class MatrixGeneration {
         }
 
     }
-
-
     public char[][] Generate_next(int game_size) {
         int neighbors;
         for (int i = 0; i < game_size; i++) {
@@ -53,21 +50,24 @@ public class MatrixGeneration {
                 if (current_gen[i][j] == 'O') {
                     if (neighbors != 2 && neighbors != 3) {
                         next_gen[i][j] = ' ';
-                    }
-                } else {
-                    if (neighbors == 3) {
+                    } else {
                         next_gen[i][j] = 'O';
                     }
+
+                } else if (neighbors == 3) {
+                    next_gen[i][j] = 'O';
                 }
+                else{
+                    next_gen[i][j] = ' ';
+                }
+
+
             }
         }
-        for (int i = 0; i < game_size; i++) {
-            for (int j = 0; j < game_size; j++) {
-                current_gen[i][j] = next_gen[i][j];
-            }
-        }
-        return current_gen;
+        return next_gen;
     }
+
+
 
 
     private int Check_Neighbors(int i, int j) {
@@ -111,6 +111,4 @@ public class MatrixGeneration {
             System.out.println();
         }
     }
-
-
 }
